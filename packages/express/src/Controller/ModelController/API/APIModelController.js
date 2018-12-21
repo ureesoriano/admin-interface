@@ -217,15 +217,12 @@ export async function deleteSingleModel(req: express$Request, res: express$Respo
  */
 export async function postApiCreateSingleModel(req: express$Request, res: express$Response, next: express$NextFunction) {
     const modelKey: string = req.params.model_key;
-    const body             = req.body;
+    const attributes       = req.body;
     const Model            = Registry.getRepository('Model').get(modelKey);
 
     if (Model) {
         const primaryKey = Model.getPrimaryKey();
         if (primaryKey) {
-            // Filter attributes
-            const attributes = lodash.pickBy(body, (value: any, key: string) => key !== primaryKey);
-
             try {
                 // Create a new item
                 const item     = await Model.getModel().create(attributes);
