@@ -1,3 +1,5 @@
+**Forked from: [@kuzmenko1256 's @admin-interface/express](https://www.npmjs.com/package/@admin-interface/express)**
+  
 # Admin Interface
 
 Admin Interface it is library for provide Admin UI on base [Sequelize](https://www.npmjs.com/package/sequelize) and [Express](https://www.npmjs.com/package/express).

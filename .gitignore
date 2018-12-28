@@ -1,8 +1,7 @@
 node_modules
-dist
 lib
 npm-debug.*
 .DS_Store
 .idea
 out
-lerna-debug.log 
+lerna-debug.log
