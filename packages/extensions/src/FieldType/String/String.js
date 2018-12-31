@@ -1,7 +1,7 @@
 // @flow
 import path from 'path';
 import jade from 'jade';
-import { FieldTypeAbstract } from '@admin-interface/core';
+import { FieldTypeAbstract } from 'admin-interface-mn-core';
 
 /**
  * String FieldType
