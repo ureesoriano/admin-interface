@@ -1,6 +1,7 @@
 // @flow
 import lodash from 'lodash';
 import { Registry, ModelAbstract } from '@admin-interface/core';
+import { Op } from 'sequelize';
 
 /**
  * Reference API Controller.
@@ -55,12 +56,12 @@ const Controller = {
                     const items = await Model.getModel().findAll({
                         limit: 10,
                         where: {
-                            $or: {
+                            [Op.or]: {
                                 [ label ]: {
-                                    $like: `%${ search }%`
+                                    [Op.like]: `%${ search }%`
                                 },
                                 [ key ]:   {
-                                    $like: `${ search }`
+                                    [Op.like]: `${ search }`
                                 }
                             }
                         }
