@@ -3,6 +3,7 @@
  * @flow
  */
 import lodash from 'lodash';
+import { Op } from 'sequelize';
 import Model from '../../ModelAbstract/ModelAbstract';
 import Column from '../../Column/Column';
 import type {
@@ -82,7 +83,7 @@ export function formatQueryModelList(model: Model,
                     if (e.association === column.getReference()) {
                         e.where = {
                             [ column.getReferenceKey() ]: {
-                                $like: `${ searchParam.value }%`
+                                [Op.like]: `${ searchParam.value }%`
                             }
                         };
                     }
@@ -90,12 +91,12 @@ export function formatQueryModelList(model: Model,
                 });
             } else if (column.getField() && column.isEmptyValue()) {
                 whereSearch[ column.getField() ] = {
-                    $like: `${ searchParam.value }%`
+                    [Op.like]: `${ searchParam.value }%`
                 };
             }
         });
         if (Object.keys(whereSearch).length) {
-            query.where = lodash.merge(query.where, { $or: whereSearch });
+            query.where = lodash.merge(query.where, { [Op.or]: whereSearch });
         }
     }
 
