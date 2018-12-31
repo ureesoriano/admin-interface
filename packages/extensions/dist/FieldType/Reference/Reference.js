@@ -16,7 +16,7 @@ var _jade = require('jade');
 
 var _jade2 = _interopRequireDefault(_jade);
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24,7 +24,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Reference FieldType
  * @extends FieldTypeAbstract
  */
-class Reference extends _core.FieldTypeAbstract {
+class Reference extends _adminInterfaceMnCore.FieldTypeAbstract {
     static getThisPath() {
         return _path2.default.join(__dirname);
     }
@@ -39,7 +39,7 @@ class Reference extends _core.FieldTypeAbstract {
         return (0, _extends3.default)({
             $field: this,
             reference
-        }, _core.Registry.getRepository('Config').get('locals'));
+        }, _adminInterfaceMnCore.Registry.getRepository('Config').get('locals'));
     }
 
     /**

@@ -16,7 +16,7 @@ var _jade = require('jade');
 
 var _jade2 = _interopRequireDefault(_jade);
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24,7 +24,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Select FieldType
  * @extends FieldTypeAbstract
  */
-class Select extends _core.FieldTypeAbstract {
+class Select extends _adminInterfaceMnCore.FieldTypeAbstract {
     constructor(...args) {
         var _temp;
 

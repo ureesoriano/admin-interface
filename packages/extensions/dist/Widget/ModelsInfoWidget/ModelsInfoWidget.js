@@ -12,7 +12,7 @@ var _jade = require('jade');
 
 var _jade2 = _interopRequireDefault(_jade);
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20,7 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Models Info Widget
  * @extends WidgetAbstract
  */
-class ModelsInfoWidget extends _core.WidgetAbstract {
+class ModelsInfoWidget extends _adminInterfaceMnCore.WidgetAbstract {
     static getThisPath() {
         return _path2.default.join(__dirname);
     }
@@ -34,11 +34,11 @@ class ModelsInfoWidget extends _core.WidgetAbstract {
         const context = {
             $widget: this,
             models: models.map(modelOption => ({
-                model: _core.Registry.getRepository('Model').get(modelOption.model),
+                model: _adminInterfaceMnCore.Registry.getRepository('Model').get(modelOption.model),
                 icon: modelOption.icon || 'folder',
                 color: modelOption.color || 'cyan'
             })),
-            Link: _core.Registry.getRepository('Config').get('locals.Link')
+            Link: _adminInterfaceMnCore.Registry.getRepository('Config').get('locals.Link')
         };
 
         return _jade2.default.renderFile(this.constructor.getThisPathView(), context);

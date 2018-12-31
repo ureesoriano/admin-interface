@@ -1,7 +1,7 @@
 // @flow
 import path from 'path';
 import jade from 'jade';
-import { Registry, WidgetAbstract } from '@admin-interface/core';
+import { Registry, WidgetAbstract } from 'admin-interface-mn-core';
 
 /**
  * Models Info Widget
