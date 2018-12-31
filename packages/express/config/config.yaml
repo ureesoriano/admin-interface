@@ -4,7 +4,7 @@ views: []
 # Default context
 locals:
     # Base jade dir
-    basedir: "[module] @admin-interface/core/views"
+    basedir: "[module] admin-interface-mn-core/views"
 
     # Branding
     branding:

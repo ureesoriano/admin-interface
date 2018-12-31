@@ -2,7 +2,7 @@
  * src/Utils/View/LinkType/PageView
  * @flow
  */
-import { Registry } from '@admin-interface/core';
+import { Registry } from 'admin-interface-mn-core';
 
 import { getMountPath } from '../../Mount/Mount';
 

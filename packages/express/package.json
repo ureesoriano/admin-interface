@@ -1,6 +1,6 @@
 {
   "name": "admin-interface-mn-express",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Forked from kuzmenko1256 's @admin-interface",
   "main": "./dist/index.js",
   "repository": "git+https://github.com/ureesoriano/admin-interface.git",
@@ -22,8 +22,8 @@
     "forms"
   ],
   "dependencies": {
-    "@admin-interface/core": "^0.1.30",
-    "@admin-interface/extensions": "^0.1.32",
+    "admin-interface-mn-core": "^0.0.1",
+    "admin-interface-mn-extensions": "^0.0.1",
     "@admin-interface/front": "^0.1.27",
     "babel-runtime": "^6.26.0",
     "body-parser": "^1.17.2",

@@ -1,8 +1,8 @@
 // @flow
 import { Router as ExpressRouter } from 'express';
-import { Registry, PageAbstract } from '@admin-interface/core';
+import { Registry, PageAbstract } from 'admin-interface-mn-core';
 
-import type { RouteType } from '@admin-interface/core';
+import type { RouteType } from 'admin-interface-mn-core';
 
 import MiddlewareEventEmitter from '../Controller/Middleware/MiddlewareEventEmitter';
 import MiddlewareHandlerError from '../Controller/Middleware/MiddlewareHandlerError';

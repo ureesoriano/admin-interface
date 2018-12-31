@@ -2,7 +2,7 @@
 import path              from 'path';
 import express           from 'express';
 import bodyParser        from 'body-parser';
-import { Registry }      from '@admin-interface/core';
+import { Registry }      from 'admin-interface-mn-core';
 import Router            from '../../Router/Router';
 import { getStaticFile } from '../../Utils/View/Static';
 import { getMountPath }  from '../../Utils/Mount/Mount';
