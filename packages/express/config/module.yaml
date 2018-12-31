@@ -1,5 +1,5 @@
-core: '[module] admin-interface/core'
+core: '[module] admin-interface-mn-core'
 
-extensions: '[module] admin-interface/extensions'
+extensions: '[module] admin-interface-mn-extensions'
 
 front: '[module] @admin-interface/front'
