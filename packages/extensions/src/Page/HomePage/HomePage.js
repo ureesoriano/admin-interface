@@ -1,5 +1,5 @@
 // @flow
-import { Registry, PageAbstract, WidgetFactory } from '@admin-interface/core';
+import { Registry, PageAbstract, WidgetFactory } from 'admin-interface-mn-core';
 
 /**
  * Home Page

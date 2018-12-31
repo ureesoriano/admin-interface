@@ -1,6 +1,6 @@
 // @flow
 import lodash from 'lodash';
-import { Registry, ModelAbstract } from '@admin-interface/core';
+import { Registry, ModelAbstract } from 'admin-interface-mn-core';
 import { Op } from 'sequelize';
 
 /**
