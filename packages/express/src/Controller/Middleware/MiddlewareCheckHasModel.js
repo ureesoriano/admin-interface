@@ -1,5 +1,5 @@
 // @flow
-import { Registry } from '@admin-interface/core';
+import { Registry } from 'admin-interface-mn-core';
 
 import ErrorResponse from '../../Utils/ErrorResponse/ErrorResponse';
 
