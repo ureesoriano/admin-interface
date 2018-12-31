@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 require('../Event/Installation');
 
@@ -18,10 +18,10 @@ class AdminInterface {
 
     setConfigFile(dirname, configFile) {
         // aeslint-disable-line class-methods-use-this
-        _core.Registry.getRepository('App').set('cwd', dirname);
+        _adminInterfaceMnCore.Registry.getRepository('App').set('cwd', dirname);
 
-        const config = (0, _core.yamlConfigParse)(dirname, configFile);
-        _core.EventEmitter.emit('set-config', config);
+        const config = (0, _adminInterfaceMnCore.yamlConfigParse)(dirname, configFile);
+        _adminInterfaceMnCore.EventEmitter.emit('set-config', config);
 
         // Do not use the .admininterfacerc file
         this.setUseRC(false);
@@ -32,16 +32,16 @@ class AdminInterface {
     start() {
         if (this.getUseRC()) {
             // Set config file from the .admininterfacerc file
-            (0, _core.setConfigFileFromRc)();
+            (0, _adminInterfaceMnCore.setConfigFileFromRc)();
         }
 
-        _core.EventEmitter.emit('start:after');
+        _adminInterfaceMnCore.EventEmitter.emit('start:after');
 
-        _core.EventEmitter.emit('start:init-plugin', this);
+        _adminInterfaceMnCore.EventEmitter.emit('start:init-plugin', this);
 
-        _core.EventEmitter.emit('start');
+        _adminInterfaceMnCore.EventEmitter.emit('start');
 
-        _core.EventEmitter.emit('start:before');
+        _adminInterfaceMnCore.EventEmitter.emit('start:before');
     }
 
     middleware() {
@@ -49,7 +49,7 @@ class AdminInterface {
         this.start();
 
         // get local express app
-        return _core.Registry.getRepository('App').get('instance');
+        return _adminInterfaceMnCore.Registry.getRepository('App').get('instance');
     }
 
     setUseRC(useRC = true) {

@@ -19,7 +19,7 @@ var _bodyParser = require('body-parser');
 
 var _bodyParser2 = _interopRequireDefault(_bodyParser);
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 var _Router = require('../../Router/Router');
 
@@ -37,28 +37,28 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function startAfter() {
     // Create the express instance
-    _core.Registry.getRepository('App').set('instance', (0, _express2.default)());
+    _adminInterfaceMnCore.Registry.getRepository('App').set('instance', (0, _express2.default)());
     // Set dynamic configuration
-    _core.Registry.getRepository('Config').set('locals.Registry', _core.Registry);
-    _core.Registry.getRepository('Config').set('locals.getStaticFile', _Static.getStaticFile);
-    _core.Registry.getRepository('Config').set('locals.getMountPath', _Mount.getMountPath);
-    _core.Registry.getRepository('Config').set('locals.Link', _Link2.default);
+    _adminInterfaceMnCore.Registry.getRepository('Config').set('locals.Registry', _adminInterfaceMnCore.Registry);
+    _adminInterfaceMnCore.Registry.getRepository('Config').set('locals.getStaticFile', _Static.getStaticFile);
+    _adminInterfaceMnCore.Registry.getRepository('Config').set('locals.getMountPath', _Mount.getMountPath);
+    _adminInterfaceMnCore.Registry.getRepository('Config').set('locals.Link', _Link2.default);
     // Set locals
-    _core.Registry.getRepository('App').get('instance').locals = _core.Registry.getRepository('Config').get('locals');
+    _adminInterfaceMnCore.Registry.getRepository('App').get('instance').locals = _adminInterfaceMnCore.Registry.getRepository('Config').get('locals');
 }
 
 function startEvent() {
     // Set admin interface views
-    _core.Registry.getRepository('Config').push('views', _path2.default.join(_core.Registry.getRepository('Config').get('Module.core'), 'views'));
-    _core.Registry.getRepository('App').get('instance').set('view engine', 'jade');
-    _core.Registry.getRepository('App').get('instance').set('views', _core.Registry.getRepository('Config').get('views'));
+    _adminInterfaceMnCore.Registry.getRepository('Config').push('views', _path2.default.join(_adminInterfaceMnCore.Registry.getRepository('Config').get('Module.core'), 'views'));
+    _adminInterfaceMnCore.Registry.getRepository('App').get('instance').set('view engine', 'jade');
+    _adminInterfaceMnCore.Registry.getRepository('App').get('instance').set('views', _adminInterfaceMnCore.Registry.getRepository('Config').get('views'));
 }
 
 function startBefore() {
     const router = new _Router2.default();
 
     // Set routing and middleware
-    _core.Registry.getRepository('App').get('instance').use(_bodyParser2.default.urlencoded({ extended: false }));
-    _core.Registry.getRepository('App').get('instance').use(_core.Registry.getRepository('Config').get('staticPath'), _express2.default.static(_path2.default.join(_core.Registry.getRepository('Config').get('Module.front'), 'dist')));
-    _core.Registry.getRepository('App').get('instance').use(router.getRouter());
+    _adminInterfaceMnCore.Registry.getRepository('App').get('instance').use(_bodyParser2.default.urlencoded({ extended: false }));
+    _adminInterfaceMnCore.Registry.getRepository('App').get('instance').use(_adminInterfaceMnCore.Registry.getRepository('Config').get('staticPath'), _express2.default.static(_path2.default.join(_adminInterfaceMnCore.Registry.getRepository('Config').get('Module.front'), 'dist')));
+    _adminInterfaceMnCore.Registry.getRepository('App').get('instance').use(router.getRouter());
 }

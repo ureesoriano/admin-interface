@@ -1,5 +1,5 @@
 // @flow
-import { EventEmitter } from '@admin-interface/core';
+import { EventEmitter } from 'admin-interface-mn-core';
 
 import { setConfigEvent } from './Events/set-config';
 import { startAfter, startBefore, startEvent } from './Events/start';
