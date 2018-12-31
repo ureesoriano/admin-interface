@@ -1,7 +1,7 @@
 // @flow
 import path from 'path';
 import jade from 'jade';
-import { FieldTypeAbstract, Registry } from '@admin-interface/core';
+import { FieldTypeAbstract, Registry } from 'admin-interface-mn-core';
 
 /**
  * Reference FieldType

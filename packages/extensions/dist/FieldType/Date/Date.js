@@ -20,7 +20,7 @@ var _moment = require('moment');
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,7 +28,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Date FieldType
  * @extends FieldTypeAbstract
  */
-class Date extends _core.FieldTypeAbstract {
+class Date extends _adminInterfaceMnCore.FieldTypeAbstract {
     constructor(...args) {
         var _temp;
 

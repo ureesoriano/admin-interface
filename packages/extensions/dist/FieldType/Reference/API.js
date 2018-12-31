@@ -12,7 +12,7 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 var _sequelize = require('sequelize');
 
@@ -33,7 +33,7 @@ const Controller = {
     getSelected(req, res, next) {
         return (0, _asyncToGenerator3.default)(function* () {
             const reference = JSON.parse(req.query.reference);
-            const Model = _lodash2.default.find(_core.Registry.getRepository('Model').get(), function (model) {
+            const Model = _lodash2.default.find(_adminInterfaceMnCore.Registry.getRepository('Model').get(), function (model) {
                 return model.getModel().tableName === reference.model;
             });
 
@@ -64,7 +64,7 @@ const Controller = {
         return (0, _asyncToGenerator3.default)(function* () {
             const reference = JSON.parse(req.query.reference);
             const search = req.query.q || '';
-            const Model = _lodash2.default.find(_core.Registry.getRepository('Model').get(), function (model) {
+            const Model = _lodash2.default.find(_adminInterfaceMnCore.Registry.getRepository('Model').get(), function (model) {
                 return model.getModel().tableName === reference.model;
             });
 
