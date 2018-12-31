@@ -3,7 +3,7 @@
  * @flow
  */
 import path from 'path';
-import { yamlConfigParse } from '@admin-interface/core';
+import { yamlConfigParse } from 'admin-interface-mn-core';
 
 /**
  * Get local configuration

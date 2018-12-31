@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.getLinkModelList = getLinkModelList;
 exports.getLinkModelSingle = getLinkModelSingle;
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 var _Mount = require('../../Mount/Mount');
 
@@ -20,7 +20,7 @@ var _Mount = require('../../Mount/Mount');
  * 
  */
 function getLinkModelList(modelKey) {
-  return `${(0, _Mount.getMountPath)() + _core.Registry.getRepository('Config').get('modelPath')}/${modelKey}/list`;
+  return `${(0, _Mount.getMountPath)() + _adminInterfaceMnCore.Registry.getRepository('Config').get('modelPath')}/${modelKey}/list`;
 }
 
 /**
@@ -30,5 +30,5 @@ function getLinkModelList(modelKey) {
  * @returns {string}
  */
 function getLinkModelSingle(modelKey, single) {
-  return `${(0, _Mount.getMountPath)() + _core.Registry.getRepository('Config').get('modelPath')}/${modelKey}/single/${single}/view`;
+  return `${(0, _Mount.getMountPath)() + _adminInterfaceMnCore.Registry.getRepository('Config').get('modelPath')}/${modelKey}/single/${single}/view`;
 }

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getLinkPage = getLinkPage;
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 var _Mount = require('../../Mount/Mount');
 
@@ -19,7 +19,7 @@ var _Mount = require('../../Mount/Mount');
  * 
  */
 function getLinkPage(key) {
-  const page = _core.Registry.getRepository('Page').get(key);
+  const page = _adminInterfaceMnCore.Registry.getRepository('Page').get(key);
   if (page) {
     return (0, _Mount.getMountPath)() + page.getUrl();
   }

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _express = require('express');
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 var _MiddlewareEventEmitter = require('../Controller/Middleware/MiddlewareEventEmitter');
 
@@ -28,8 +28,8 @@ class Router {
     getRouter() {
         const router = (0, _express.Router)();
 
-        router.use(_core.Registry.getRepository('Config').get('modelPath'), this.getModelRouter());
-        router.use(_core.Registry.getRepository('Config').get('apiPath'), this.getApiModelRouter());
+        router.use(_adminInterfaceMnCore.Registry.getRepository('Config').get('modelPath'), this.getModelRouter());
+        router.use(_adminInterfaceMnCore.Registry.getRepository('Config').get('apiPath'), this.getApiModelRouter());
         router.use('/', this.getPageRouter());
         router.use(_MiddlewareHandlerError2.default);
 
@@ -57,10 +57,10 @@ class Router {
         apiRouter.delete('/model/:model_key/single/:id/delete', ...(0, _MiddlewareEventEmitter2.default)('route:api:model:delete:delete'), _APIModelController.deleteSingleModel);
 
         // field type api
-        apiRouter.use(_core.Registry.getRepository('Config').get('fieldPath'), ...(0, _MiddlewareEventEmitter2.default)('route:api:fieldType:use'), this.getFieldTypeRouter());
+        apiRouter.use(_adminInterfaceMnCore.Registry.getRepository('Config').get('fieldPath'), ...(0, _MiddlewareEventEmitter2.default)('route:api:fieldType:use'), this.getFieldTypeRouter());
 
         // widgets api
-        apiRouter.use(_core.Registry.getRepository('Config').get('widgetPath'), ...(0, _MiddlewareEventEmitter2.default)('route:api:widget:use'), this.getWidgetRouter());
+        apiRouter.use(_adminInterfaceMnCore.Registry.getRepository('Config').get('widgetPath'), ...(0, _MiddlewareEventEmitter2.default)('route:api:widget:use'), this.getWidgetRouter());
 
         return apiRouter;
     }
@@ -69,8 +69,8 @@ class Router {
         // eslint-disable-line class-methods-use-this
         const pageRouter = (0, _express.Router)();
 
-        Object.keys(_core.Registry.getRepository('Page').get()).forEach(key => {
-            const page = _core.Registry.getRepository('Page').get(key);
+        Object.keys(_adminInterfaceMnCore.Registry.getRepository('Page').get()).forEach(key => {
+            const page = _adminInterfaceMnCore.Registry.getRepository('Page').get(key);
             pageRouter.get(page.getUrl(), page.render.bind(page));
         });
 
@@ -81,8 +81,8 @@ class Router {
         // eslint-disable-line class-methods-use-this
         const fieldTypeRouter = (0, _express.Router)();
 
-        Object.keys(_core.Registry.getRepository('FieldType').get()).forEach(key => {
-            const fieldType = _core.Registry.getRepository('FieldType').get(key);
+        Object.keys(_adminInterfaceMnCore.Registry.getRepository('FieldType').get()).forEach(key => {
+            const fieldType = _adminInterfaceMnCore.Registry.getRepository('FieldType').get(key);
             const routing = fieldType.getRouting();
             if (routing) {
                 const routingArray = Object.values(routing);
@@ -101,8 +101,8 @@ class Router {
         // eslint-disable-line class-methods-use-this
         const widgetRouter = (0, _express.Router)();
 
-        Object.keys(_core.Registry.getRepository('Widget').get()).forEach(key => {
-            const widget = _core.Registry.getRepository('Widget').get(key);
+        Object.keys(_adminInterfaceMnCore.Registry.getRepository('Widget').get()).forEach(key => {
+            const widget = _adminInterfaceMnCore.Registry.getRepository('Widget').get(key);
             const routing = widget.getRouting();
             if (routing) {
                 const routingArray = Object.values(routing);

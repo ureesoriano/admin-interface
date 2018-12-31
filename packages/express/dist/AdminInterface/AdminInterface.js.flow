@@ -4,7 +4,7 @@ import {
     Registry,
     yamlConfigParse,
     setConfigFileFromRc
-} from '@admin-interface/core';
+} from 'admin-interface-mn-core';
 import '../Event/Installation';
 
 /**

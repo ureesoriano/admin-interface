@@ -22,7 +22,7 @@ let getApiList = exports.getApiList = (() => {
     var _ref = (0, _asyncToGenerator3.default)(function* (req, res, next) {
         const modelKey = req.params.model_key;
 
-        const Model = _core.Registry.getRepository('Model').get(modelKey);
+        const Model = _adminInterfaceMnCore.Registry.getRepository('Model').get(modelKey);
         if (Model) {
             const Columns = Model.getColumns();
 
@@ -38,7 +38,7 @@ let getApiList = exports.getApiList = (() => {
                 value: refModelKey
             };
             if (refModel) {
-                const refModelObject = _core.Registry.getRepository('Model').get(refModel);
+                const refModelObject = _adminInterfaceMnCore.Registry.getRepository('Model').get(refModel);
                 if (refModelObject) {
                     byReference.table = refModelObject.getModel().tableName;
                 }
@@ -53,7 +53,7 @@ let getApiList = exports.getApiList = (() => {
 
             // Order params
             const orderBy = dataTableOrder[0];
-            const order = (0, _core.formatOrder)(Columns[orderBy.column], orderBy.dir.toLocaleUpperCase());
+            const order = (0, _adminInterfaceMnCore.formatOrder)(Columns[orderBy.column], orderBy.dir.toLocaleUpperCase());
 
             // Pagination params
             const query = {
@@ -63,9 +63,9 @@ let getApiList = exports.getApiList = (() => {
 
             try {
                 // Reference where
-                const whereByReference = (0, _core.getReferenceWhere)(Model, byReference);
+                const whereByReference = (0, _adminInterfaceMnCore.getReferenceWhere)(Model, byReference);
                 // Get items
-                const { rows, count } = yield Model.getModel().findAndCountAll((0, _core.formatQueryModelList)(Model, order, query, search, whereByReference));
+                const { rows, count } = yield Model.getModel().findAndCountAll((0, _adminInterfaceMnCore.formatQueryModelList)(Model, order, query, search, whereByReference));
                 // Records total
                 const recordsTotal = yield Model.getModel().count(whereByReference ? {
                     where: whereByReference
@@ -143,7 +143,7 @@ let putUpdateSingleModel = exports.putUpdateSingleModel = (() => {
         const modelKey = req.params.model_key;
         const itemId = req.params.id;
         const body = req.body;
-        const Model = _core.Registry.getRepository('Model').get(modelKey);
+        const Model = _adminInterfaceMnCore.Registry.getRepository('Model').get(modelKey);
 
         if (Model) {
             // Filter body
@@ -194,7 +194,7 @@ let deleteSingleModel = exports.deleteSingleModel = (() => {
     var _ref4 = (0, _asyncToGenerator3.default)(function* (req, res, next) {
         const modelKey = req.params.model_key;
         const itemId = req.params.id;
-        const Model = _core.Registry.getRepository('Model').get(modelKey);
+        const Model = _adminInterfaceMnCore.Registry.getRepository('Model').get(modelKey);
 
         if (Model) {
             try {
@@ -243,7 +243,7 @@ let postApiCreateSingleModel = exports.postApiCreateSingleModel = (() => {
     var _ref5 = (0, _asyncToGenerator3.default)(function* (req, res, next) {
         const modelKey = req.params.model_key;
         const attributes = req.body;
-        const Model = _core.Registry.getRepository('Model').get(modelKey);
+        const Model = _adminInterfaceMnCore.Registry.getRepository('Model').get(modelKey);
 
         if (Model) {
             const primaryKey = Model.getPrimaryKey();
@@ -275,7 +275,7 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 var _ErrorResponse = require('../../../Utils/ErrorResponse/ErrorResponse');
 

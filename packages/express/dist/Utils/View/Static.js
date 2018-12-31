@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getStaticFile = getStaticFile;
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 var _Mount = require('../Mount/Mount');
 
@@ -19,5 +19,5 @@ var _Mount = require('../Mount/Mount');
  * 
  */
 function getStaticFile(filePath = '') {
-  return (0, _Mount.getMountPath)() + _core.Registry.getRepository('Config').get('staticPath') + filePath;
+  return (0, _Mount.getMountPath)() + _adminInterfaceMnCore.Registry.getRepository('Config').get('staticPath') + filePath;
 }

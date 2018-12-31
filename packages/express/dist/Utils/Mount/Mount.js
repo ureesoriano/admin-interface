@@ -5,14 +5,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getMountPath = getMountPath;
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 /**
  * Get mount path
  * @returns {string}
  */
 function getMountPath() {
-  return _core.Registry.getRepository('App').get('instance').mountpath;
+  return _adminInterfaceMnCore.Registry.getRepository('App').get('instance').mountpath;
 } /**
    * @module src/Utils/Mount/Mount
    * 

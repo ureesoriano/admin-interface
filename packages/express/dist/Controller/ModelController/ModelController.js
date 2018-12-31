@@ -22,11 +22,11 @@ let getSingleModel = exports.getSingleModel = (() => {
     var _ref = (0, _asyncToGenerator3.default)(function* (req, res, next) {
         const modelKey = req.params.model_key;
         const itemId = req.params.id;
-        const Model = _core.Registry.getRepository('Model').get(modelKey);
+        const Model = _adminInterfaceMnCore.Registry.getRepository('Model').get(modelKey);
 
         if (Model) {
             const References = Model.getReferences().map(function (reference) {
-                return _core.Registry.getRepository('Model').get(reference);
+                return _adminInterfaceMnCore.Registry.getRepository('Model').get(reference);
             });
 
             try {
@@ -55,7 +55,7 @@ let getSingleModel = exports.getSingleModel = (() => {
 
 exports.getList = getList;
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 var _ErrorResponse = require('../../Utils/ErrorResponse/ErrorResponse');
 
@@ -76,7 +76,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 function getList(req, res, next) {
     const modelKey = req.params.model_key;
-    const Model = _core.Registry.getRepository('Model').get(modelKey);
+    const Model = _adminInterfaceMnCore.Registry.getRepository('Model').get(modelKey);
 
     if (Model) {
         try {

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getLinkApiFieldType = getLinkApiFieldType;
 
-var _core = require('@admin-interface/core');
+var _adminInterfaceMnCore = require('admin-interface-mn-core');
 
 var _Mount = require('../../Mount/Mount');
 
@@ -20,9 +20,9 @@ var _Mount = require('../../Mount/Mount');
  * 
  */
 function getLinkApiFieldType(fieldKey, routeKey) {
-  const routing = _core.Registry.getRepository('FieldType').get(fieldKey).getRouting();
+  const routing = _adminInterfaceMnCore.Registry.getRepository('FieldType').get(fieldKey).getRouting();
   if (routing) {
-    return `${(0, _Mount.getMountPath)() + _core.Registry.getRepository('Config').get('apiPath') + _core.Registry.getRepository('Config').get('fieldPath')}/${fieldKey + routing[routeKey].route}`;
+    return `${(0, _Mount.getMountPath)() + _adminInterfaceMnCore.Registry.getRepository('Config').get('apiPath') + _adminInterfaceMnCore.Registry.getRepository('Config').get('fieldPath')}/${fieldKey + routing[routeKey].route}`;
   }
   return '';
 }

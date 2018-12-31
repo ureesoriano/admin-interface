@@ -3,7 +3,7 @@
  * @flow
  */
 import lodash from 'lodash';
-import { Registry, Column, formatOrder, getReferenceWhere, formatQueryModelList } from '@admin-interface/core';
+import { Registry, Column, formatOrder, getReferenceWhere, formatQueryModelList } from 'admin-interface-mn-core';
 import type {
     DataTableColumnType,
     DataTableOrderType,
