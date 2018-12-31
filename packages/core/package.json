@@ -1,16 +1,16 @@
 {
-  "name": "@admin-interface/core",
-  "version": "0.1.30",
-  "description": "",
+  "name": "admin-interface-mn-core",
+  "version": "0.0.1",
+  "description": "Forked from kuzmenko1256 's @admin-interface",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/admin-interface/admin-interface.git"
+    "url": "git+https://github.com/ureesoriano/admin-interface.git"
   },
   "author": "kuzmenko1256",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/admin-interface/admin-interface/issues"
+    "url": "https://github.com/ureesoriano/admin-interface/issues"
   },
   "homepage": "https://github.com/admin-interface/admin-interface#readme",
   "dependencies": {
