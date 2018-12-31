@@ -1,6 +1,6 @@
 {
   "name": "admin-interface-mn-express",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Forked from kuzmenko1256 's @admin-interface",
   "main": "./dist/index.js",
   "repository": "git+https://github.com/ureesoriano/admin-interface.git",
